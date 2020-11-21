@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm> 
 #include<vector>
-
+#include <time.h> //edited by chenjb
 using namespace std;
 
 int is_great(string a,string b){ //a>,=,<b ? 1:0:-1
@@ -19,7 +19,7 @@ int is_great(string a,string b){ //a>,=,<b ? 1:0:-1
 string sub(string a,string b){ //a-b
     if(a==b) return "0";
 	string d="";
-	int flag=0; //½èÎ»±ê¼Ç
+	int flag=0; //å€Ÿä½æ ‡è®°
 	int l=a.size()-b.size();
 	for(int i=a.size()-1;i>=0;i--){
 		char c;
@@ -53,7 +53,7 @@ string add(string a,string b){ //a+b
 		b=tmp;
 	}
 	int l=a.size()-b.size();
-	int f=0; //½øÎ» 
+	int f=0; //è¿›ä½ 
 	for(int i=a.size()-1;i>=0;i--){
 		if(i>=l){
 			int t=a[i]-'0'+b[i-l]-'0'+f;
@@ -87,9 +87,9 @@ string mul_n(string a,string b,string n){ //a*b mod n
 	string p="";
 	for(int i=b.size()-1;i>=0;i--){
 		string p1="";
-		int f=0,tb; //½øÎ» 
+		int f=0,tb; //è¿›ä½ 
 		tb=b[i]-'0';
-		for(int j=a.size()-1;j>=0;j--){ //aµÄÃ¿Ò»Î»ºÍbµÄ¸÷Î»Ïà³Ë 
+		for(int j=a.size()-1;j>=0;j--){ //açš„æ¯ä¸€ä½å’Œbçš„å„ä½ç›¸ä¹˜ 
 			int tmp=tb*(a[j]-'0')+f;
 			p1+=(tmp%10+'0');
 			f=tmp/10;
@@ -99,7 +99,7 @@ string mul_n(string a,string b,string n){ //a*b mod n
 		int k=0;
 	    while(p1[k]=='0') k++;
 	    p1=p1.substr(k,p1.size()-k);
-	    for(int j=0;j<b.size()-1-i;j++) //×óÒÆÏàÓ¦Î» 
+	    for(int j=0;j<b.size()-1-i;j++) //å·¦ç§»ç›¸åº”ä½ 
 	        p1+='0';
 	    p=add(p,p1);
 	}

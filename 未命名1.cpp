@@ -1,6 +1,6 @@
 #include<iostream>
 #include<algorithm> 
-#include<vector>
+#include<vector> //vector
 #include <time.h> //edited by chenjb
 using namespace std;
 
